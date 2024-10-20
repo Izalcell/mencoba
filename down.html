@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Text on Image</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="input-section">
+            <h1>Add Text to Image</h1>
+            <input type="text" id="input1" placeholder="Enter first text">
+            <input type="text" id="input2" placeholder="Enter second text">
+            <input type="text" id="input3" placeholder="Enter third text">
+            <button id="generate-btn">Generate Image</button>
+        </div>
+        <div id="output-section" style="display:none;">
+            <canvas id="output-canvas"></canvas>
+            <a id="download-btn" download="image.png">Download Image</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
