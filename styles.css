@@ -4,69 +4,162 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'semi';
+    src: url('fonts/notosans-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'reg';
+    src: url('fonts/notosans_regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'bold';
+    src: url('fonts/notosans_bold.ttf') format('truetype');
+}
+
+
 body, html {
+    
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-container {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+    width: 100vw; /* Fullscreen width */
+    height: 100vh; /* Fullscreen height */
 }
 
-.container {
+.background-image {
+    display: block;
+    max-width: 100%; /* Agar gambar tetap pada ukuran aslinya */
+    height: auto; /* Tinggi menyesuaikan dengan lebar */
+}
+
+.text-overlay {
+    position: absolute;
+    font-size: 2vw; /* Responsif berdasarkan lebar layar */
     text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
 }
 
-input {
-    width: 80%;
+#text-overlay-0 {
+    top: 24.2%; /* nama pengirim */
+    left: 15.9%;
+    color: #343434;
+    filter: blur(0.2px);
+    font-size: 17px;
+    font-family: 'semi';
+    
+}
+
+#text-overlay-1 {
+    top: 38.7%; /* nama penerima */
+    left: 15.9%;
+    color: #343434;
+    filter: blur(0.2px);
+    font-size: 17px;
+    font-family: 'semi';
+    
+}
+
+#text-overlay-2 {
+    top: 42.6%; /* bank tujuan */
+    left: 15.9%;
+    font-size: 17px;
+    color: #787878;
+    font-family: 'reg';
+}
+
+#text-overlay-3 {
+    top: 46.4%; /* norek penerima */
+    left: 16%;
+    color: #787878;
+    font-size: 14px;
+    font-family: 'reg';
+}
+
+#text-overlay-4 {
+    top: 12.01%; /* nominal */
+    left: 4.3%;
+    color: #343434;
+    filter: blur(0.2px);
+    font-size: 25px;
+    font-family: 'bold';
+}
+
+
+#currentTime {
+    top: 81%; /* jam */
+    left: 16.9%;
+    color: #343434;
+    font-size: 16.8px;
+    font-family: 'reg';
+}
+
+#noreff {
+    top: 5.85%; /* noreff */
+    left: 4.15%;
+    color: #343434;
+    filter: blur(0.2px);
+    font-size: 14px;
+    font-family: 'reg';
+}
+
+#norek {
+    top: 32.1%; /* norek pengirim */
+    left: 16%;
+    color: #787878;
+    font-size: 14px;
+    font-family: 'reg';
+}
+
+#currentDate {
+    top: 70.6%; /* tgl */
+    left: 16.9%;
+    color: #343434;
+    font-size: 16.8px;
+    font-family: 'reg';
+}
+        
+.input-container {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+input[type="text"] {
     padding: 10px;
-    margin: 10px 0;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 5px;
+    outline: none;
+    width: 80%;
+    max-width: 400px;
+    margin-bottom: 10px;
 }
 
 button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #28a745;
-    color: white;
     border: none;
+    background-color: #4CAF50;
+    color: white;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #218838;
-}
-
-canvas {
-    border: 1px solid #ccc;
-    margin-top: 20px;
-    max-width: 100%;
-    height: auto;
-}
-
-#download-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-#download-btn:hover {
-    background-color: #0056b3;
-}
-
-@media (max-width: 600px) {
-    input {
-        width: 100%;
-    }
+    background-color: #45a049;
 }
