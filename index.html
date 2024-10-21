@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="image-container" id="image-container" style="display: none;">
-        <img src="poloss.jpg" alt="Background Image" class="background-image">
+        <img src="poloss.jpg" alt="Background Image" class="background-image" id="downloadable-image">
         <div class="text-overlay" id="text-overlay-0"></div>
         <div class="text-overlay" id="text-overlay-1"></div>
         <div class="text-overlay" id="text-overlay-2"></div>
@@ -28,6 +28,10 @@
         <input type="text" id="textInput4" placeholder="Nominal">
         <button onclick="displayText()">Display Image & Text</button>
         
+        <div id="output-section" style="display:none;">
+        <canvas id="output-canvas"></canvas>
+        <a id="download-btn" download="image.png">Download Image</a>
+        </div>
     </div>
 
     <script src="script.js"></script>
